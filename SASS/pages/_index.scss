@@ -1,0 +1,226 @@
+.location {
+  background: linear-gradient($color-darkgrey -50%, $color-lightgrey 20%);
+  height: 50px;
+  @include display-flex-row-center-center;
+  gap: 17px;
+
+  & i {
+    color: $color-darkgrey;
+  }
+
+  & input {
+    border: none;
+    background-color: $color-lightgrey;
+    color: $color-text;
+    width: 115px;
+  }
+}
+
+.explorer {
+  background-color: $color-lightergrey;
+  padding: 35px 20px 35px 20px;
+  text-align: center;
+  text-wrap: pretty; // non implémenté sous firefox
+
+  &__button {
+    @include btn-base;
+  }
+}
+
+.function {
+  background-color: $color-background-primary;
+  padding: 35px 20px 35px 20px;
+  @include display-flex-column-center;
+  text-wrap: pretty; // non implémenté sous firefox
+
+  &__list {
+    @include display-flex-column-center;
+    list-style-type: none;
+    color: $color-text;
+    padding: 0;
+    margin-bottom: 0;
+    gap: 25px;
+    @include desktop {
+      @include display-flex-row-center;
+    }
+
+    &__item {
+      @include display-flex-row-center-start;
+      gap: 15px;
+      border-radius: 20px;
+      background: var(--Background, #f6f6f6);
+      box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
+      width: 322.486px;
+      height: 72.379px;
+      flex-shrink: 0;
+      padding-left: 0;
+      margin-left: 0;
+
+      &--violet {
+        & i {
+          color: $color-primary;
+        }
+      }
+
+      &__number {
+        color: $color-text-white;
+        background-color: $color-primary;
+        border-radius: 50%;
+        width: 25px;
+        height: 25px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 14px;
+        font-weight: 500;
+        position: inherit;
+        margin-left: -12.5px;
+        margin-right: 10px;
+      }
+    }
+  }
+}
+
+.restaurants {
+  background-color: $color-lightergrey;
+  @include display-flex-column-center;
+  padding: 50px 15px 50px 15px;
+
+  & h2 {
+    margin-bottom: 24px;
+
+    @include desktop {
+      width: calc(100% - 60px);
+      padding: 0 8%;
+    }
+  }
+
+  &__cards {
+    @include display-flex-column-center;
+    padding: 0;
+    margin-bottom: 0;
+    gap: 25px;
+    @include desktop {
+      @include display-flex-row-center;
+      flex-wrap: wrap;
+      flex-shrink: 0;
+      justify-content: space-around;
+      gap: $card-gap;
+      width: 100%;
+      padding: 0 8%;
+    }
+
+    &__card {
+      @include display-flex-column-start;
+      border-radius: 20px;
+      background-color: $color-background-primary;
+      box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
+      width: 340px;
+      height: 251px;
+      flex-shrink: 0;
+      padding-left: 0;
+      margin-left: 0;
+      @include desktop {
+        width: calc(50% - $card-gap);
+        height: 24vw;
+      }
+
+      & a {
+        text-decoration: none;
+        color: $color-text;
+        height: 100%;
+        width: 100%;
+      }
+
+      & img {
+        width: 100%;
+        height: calc(100% - $card-content-height);
+        object-fit: cover;
+        border-radius: 20px 20px 0 0;
+      }
+
+      &__content {
+        @include display-flex-row-center;
+        justify-content: space-between;
+        gap: 15px;
+        height: $card-content-height;
+        width: 100%;
+        padding: 0px 15px;
+        position: relative;
+
+        &__text {
+          @include display-flex-column-start;
+          justify-content: center;
+          gap: 5px;
+          padding: 0px 31px;
+        }
+      }
+
+      .Checkbox {
+        display: none;
+      }
+
+      &__icon {
+        position: relative;
+        left: 84%;
+        bottom: 54px;
+
+        & i {
+          font-size: 22px;
+          position: absolute;
+        }
+
+        & .emptyheart {
+          visibility: visible;
+        }
+
+        &__wrap {
+          & .fullheart {
+            visibility: hidden;
+          }
+
+          & i {
+            position: relative;
+          }
+        }
+
+        // &:active {    ne fonctionne pas car apres le clique on perd l'effet
+        //     & .emptyheart {
+        //         animation: 0.1s hide-heart ease-out forwards;
+        //     }
+        //     & .fullheart{
+        //         animation: 0.1s fill-heart ease-out forwards;
+        //     }
+
+        //     & #heart:after{
+        //         content: '';
+        //         position: absolute;
+        //         left: 0;
+        //         top: 0;
+        //         height: 0;
+        //         width: 100%;
+        //         background:  linear-gradient(180deg, $color-primary, $color-secondary);
+        //         animation-delay: 0.5s;
+        //         animation: 1.5s rise-to-top ease-out forwards;
+        //         mix-blend-mode:screen;
+        //       }
+
+        //     }
+      }
+
+      #Checkbox1:checked + .restaurants__cards__card__icon {
+        @include heart-animation;
+      }
+
+      #Checkbox2:checked + .restaurants__cards__card__icon {
+        @include heart-animation;
+      }
+      #Checkbox3:checked + .restaurants__cards__card__icon {
+        @include heart-animation;
+      }
+      #Checkbox4:checked + .restaurants__cards__card__icon {
+        @include heart-animation;
+      }
+    }
+  }
+}

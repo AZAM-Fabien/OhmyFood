@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&family=Shrikhand&display=swap');
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.header__location input {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: $font-size-small;
+}
+
+.loaded{
+  & .location{
+    & input {
+      font-family: "Roboto", sans-serif;
+      font-weight: 500;
+      font-size: $font-size-small;
+    }
+  }
+}
+
+h1,
+section h2 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: $font-size-big;
+  margin: 0px;
+}
+
+h1 {
+  margin-bottom: 15px;
+  @include desktop {
+    font-size: 40px;
+  }
+}
+
+.explorer {
+  & p {
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-size: $font-size-medium;
+    margin-top: 0px;
+    margin-bottom: 25px;
+  }
+}
+.restaurants {
+  & h3{
+  margin: 0px;
+  font-size: $font-size-medium;
+  font-weight: 700;
+  }
+
+  & p{
+    margin: 0px;
+    font-size: $font-size-small;
+    font-weight: 300;
+}
+}
+
+.menu__content__header{
+   & h2{
+    font-family: "Shrikhand", sans-serif;
+    font-weight: 400;
+    font-size: 28px;
+  }
+}
+.menu__content{
+  & h3 {
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-size: $font-size-small;
+    margin: 0px;
+
+    &::after {
+      content: "";
+      position: relative; 
+      top: 8px;
+      display: block;
+      width: 40px;
+      height: 3px;
+      background-color: $color-tertiary;
+      margin-bottom: 12px;
+    }
+  }
+
+  & h4 {
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-size: $font-size-medium;
+    margin: 0px;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  &__entrees,
+  &__plats,
+  &__desserts {
+    &__item{
+      &__box__description p {
+        font-family: "Roboto", sans-serif;
+        font-weight: 300;
+        font-size: $font-size-small;
+        margin: 0px;
+      }
+
+      &__price {
+        font-family: "Roboto", sans-serif;
+        font-weight: 700;
+        font-size: 15px;
+        margin: 0px;
+      }
+    }
+  }
+}
+
+
+
+
+.footer > h2 {
+  font-family: "Shrikhand", sans-serif;
+  font-weight: 400;
+  font-size: $font-size-medium;
+  margin: 0px;
+}
+
+.footer {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: $font-size-small;
+  margin: 0px;
+}
+
+button{
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: $font-size-small;
+}
+

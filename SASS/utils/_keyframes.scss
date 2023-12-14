@@ -1,0 +1,60 @@
+@keyframes hide-loader {
+  0% {
+    width: 100%;
+    height: 100%;
+    visibility: visible;
+    opacity: 1;
+  }
+  100% {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+@keyframes rise-to-top {
+  from {
+    top: 100%;
+  }
+  to {
+    height: 100%;
+  }
+}
+
+@keyframes fill-heart {
+  to {
+    visibility: visible;
+  }
+}
+
+@keyframes hide-heart {
+  to {
+    display: none;
+  }
+}
+
+@keyframes enlarge {
+  from {
+    width: 0;
+  }
+  to {
+    width: 59px;
+  }
+}
+
+@keyframes shrink {
+  from {
+    width: 59px;
+  }
+  to {
+    width: 0;
+  }
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

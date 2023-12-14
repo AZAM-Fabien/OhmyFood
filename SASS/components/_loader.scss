@@ -1,0 +1,50 @@
+.loader {  
+    display: flex;
+}
+
+.loader {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background:  black;
+    z-index: 999;
+    animation: hide-loader 0.5s forwards;
+    animation-delay: 3s;
+  
+ 
+    &__text{
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    transform: translate(0%, -50%);
+    font-family: "Shrikhand", sans-serif;
+    font-size: 12vw;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-family: "Shrikhand", serif;
+    background:  linear-gradient(180deg, $color-primary, $color-secondary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: smokeOut 1s ease-in-out infinite alternate;
+    text-shadow:  0 2px 0 rgba(0, 0, 0, 0.2); 
+    }
+
+    &__text:before {
+    content: "Ohmyfood";
+    animation-delay: 0.5s;
+    
+    }
+
+}
+
+  @keyframes smokeOut {
+    100% {
+      opacity: 0.2;
+      filter: blur(5px);
+      letter-spacing: 4px;
+    }
+  }
