@@ -104,6 +104,10 @@ h1 {
         font-weight: 300;
         font-size: $font-size-small;
         margin: 0px;
+        width: 100%;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
       }
 
       &__price {

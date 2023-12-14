@@ -150,6 +150,10 @@ h1 {
   font-weight: 300;
   font-size: 16px;
   margin: 0px;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 .menu__content__entrees__item__price, .menu__content__plats__item__price, .menu__content__desserts__item__price {
   font-family: "Roboto", sans-serif;
