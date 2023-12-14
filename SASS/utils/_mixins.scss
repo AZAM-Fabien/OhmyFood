@@ -1,88 +1,87 @@
 @mixin display-flex-column-center {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-@mixin display-flex-column-center-center {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }  
-
-@mixin display-flex-column-start {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }  
-
-@mixin display-flex-row-center-center {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-  }
-
-@mixin display-flex-row-center-start {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-  }
-
-@mixin display-flex-row-center {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-  }
-
-@mixin display-flex-row-start {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;    
-  }  
-
-
-@mixin btn-base {
-    background: linear-gradient(0deg, $color-primary, $color-secondary);
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
-    border-radius: 25px;
-    width: 218px;
-    height: 50px;
-    border: none;
-    color: $color-text-white;
-
-    &:hover {
-        background: linear-gradient(
-            180deg,
-            lighten($color-secondary, 5),
-            lighten($color-primary, 10)
-          );
-        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
-    }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-@mixin heart-animation{
-  & .emptyheart{
+@mixin display-flex-column-center-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin display-flex-column-start {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+@mixin display-flex-row-center-center {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin display-flex-row-center-start {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+@mixin display-flex-row-center {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+@mixin display-flex-row-start {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+@mixin btn-base {
+  background: linear-gradient(0deg, $color-primary, $color-secondary);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 25px;
+  width: 218px;
+  height: 50px;
+  border: none;
+  color: $color-text-white;
+
+  &:hover {
+    background: linear-gradient(
+      180deg,
+      lighten($color-secondary, 5),
+      lighten($color-primary, 10)
+    );
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+  }
+}
+
+@mixin heart-animation {
+  & .emptyheart {
     animation: 0.1s hide-heart ease-out forwards;
   }
-  
-  & .fullheart{
+
+  & .fullheart {
     animation: 0.1s fill-heart ease-out forwards;
   }
-  
-  & #heart:after{
-    content: '';
+
+  & #heart:after {
+    content: "";
     position: absolute;
     left: 0;
     top: 0;
     height: 0;
     width: 100%;
-    background:  linear-gradient(180deg, $color-primary, $color-secondary);
-    animation: 0.5s rise-to-top ease-in-out forwards;
+    background: linear-gradient(180deg, $color-primary, $color-secondary);
+    animation: 0.6s rise-to-top ease-in-out forwards;
     animation-delay: 0.2s;
-    mix-blend-mode:screen;
+    mix-blend-mode: screen;
   }
 }
 

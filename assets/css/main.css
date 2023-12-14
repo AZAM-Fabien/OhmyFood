@@ -512,7 +512,7 @@ button {
   height: 0;
   width: 100%;
   background: linear-gradient(180deg, #9356DC, #FF79DA);
-  animation: 0.5s rise-to-top ease-in-out forwards;
+  animation: 0.6s rise-to-top ease-in-out forwards;
   animation-delay: 0.2s;
   mix-blend-mode: screen;
 }
@@ -530,7 +530,7 @@ button {
   height: 0;
   width: 100%;
   background: linear-gradient(180deg, #9356DC, #FF79DA);
-  animation: 0.5s rise-to-top ease-in-out forwards;
+  animation: 0.6s rise-to-top ease-in-out forwards;
   animation-delay: 0.2s;
   mix-blend-mode: screen;
 }
@@ -548,7 +548,7 @@ button {
   height: 0;
   width: 100%;
   background: linear-gradient(180deg, #9356DC, #FF79DA);
-  animation: 0.5s rise-to-top ease-in-out forwards;
+  animation: 0.6s rise-to-top ease-in-out forwards;
   animation-delay: 0.2s;
   mix-blend-mode: screen;
 }
@@ -566,7 +566,7 @@ button {
   height: 0;
   width: 100%;
   background: linear-gradient(180deg, #9356DC, #FF79DA);
-  animation: 0.5s rise-to-top ease-in-out forwards;
+  animation: 0.6s rise-to-top ease-in-out forwards;
   animation-delay: 0.2s;
   mix-blend-mode: screen;
 }
@@ -686,7 +686,7 @@ button {
   height: 0;
   width: 100%;
   background: linear-gradient(180deg, #9356DC, #FF79DA);
-  animation: 0.5s rise-to-top ease-in-out forwards;
+  animation: 0.6s rise-to-top ease-in-out forwards;
   animation-delay: 0.2s;
   mix-blend-mode: screen;
 }
