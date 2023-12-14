@@ -17,18 +17,15 @@
 }
 
 .explorer {
+  @include display-flex-column-center-center;
   background-color: $color-lightergrey;
   padding: 35px 20px 35px 20px;
   text-align: center;
   text-wrap: pretty; // non implémenté sous firefox
 
   &__button {
+    @include display-flex-row-center-center;
     @include btn-base;
-    a {
-        @include display-flex-column-center-center;
-        width: 100%;
-        height: 100%;
-    }
   }
 }
 
@@ -170,26 +167,24 @@
         left: 84%;
         bottom: 54px;
 
-        & i {
+        & .emptyheart {
           font-size: 22px;
           position: absolute;
         }
 
-        & .emptyheart {
-          visibility: visible;
-        }
-
-        &__wrap {
-          & .fullheart {
-            visibility: hidden;
-          }
-
-          & i {
-            position: relative;
+        & .fullheart {
+          opacity: 0;
+          &::before {
+            background: white;
           }
         }
 
-        // &:active {    ne fonctionne pas car apres le clique on perd l'effet
+        & .fullheart {
+          font-size: 22px;
+          position: relative;
+        }
+
+        // &:active {    apres clique perd l'effet d'animation
         //     & .emptyheart {
         //         animation: 0.1s hide-heart ease-out forwards;
         //     }
@@ -197,7 +192,7 @@
         //         animation: 0.1s fill-heart ease-out forwards;
         //     }
 
-        //     & #heart:after{
+        //     & .fullheart:after{
         //         content: '';
         //         position: absolute;
         //         left: 0;
@@ -216,15 +211,29 @@
       #Checkbox1:checked + .restaurants__cards__card__icon {
         @include heart-animation;
       }
+      #Checkbox1:not(:checked) + .restaurants__cards__card__icon {
+        @include heart-animation-reverse;
+      }
 
       #Checkbox2:checked + .restaurants__cards__card__icon {
         @include heart-animation;
       }
+      #Checkbox2:not(:checked) + .restaurants__cards__card__icon {
+        @include heart-animation-reverse;
+      }
+
       #Checkbox3:checked + .restaurants__cards__card__icon {
         @include heart-animation;
       }
+      #Checkbox3:not(:checked) + .restaurants__cards__card__icon {
+        @include heart-animation-reverse;
+      }
+
       #Checkbox4:checked + .restaurants__cards__card__icon {
         @include heart-animation;
+      }
+      #Checkbox4:not(:checked) + .restaurants__cards__card__icon {
+        @include heart-animation-reverse;
       }
     }
   }

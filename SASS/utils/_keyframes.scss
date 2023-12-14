@@ -20,15 +20,31 @@
   }
 }
 
+@keyframes drop-to-bottom {
+  from {
+    height: 100%;
+  }
+  to {
+    top: 100%;
+  }
+}
+
 @keyframes fill-heart {
   to {
-    visibility: visible;
+    opacity: 1;
   }
 }
 
 @keyframes hide-heart {
-  to {
-    display: none;
+  0% {
+    opacity: 1;
+  }
+
+  37.5% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
 

@@ -64,27 +64,29 @@
       }
 
       &__like {
-        & i {
+        & .emptyheart {
           font-size: 22px;
           position: absolute;
         }
 
-        & .emptyheart {
-          visibility: visible;
+        & .fullheart {
+          opacity: 0;
+          &::before {
+            background: white;
+          }
         }
 
-        &__wrap {
-          & .fullheart {
-            visibility: hidden;
-          }
-
-          & i {
-            position: relative;
-          }
+        & .fullheart {
+          font-size: 22px;
+          position: relative;
         }
       }
       #Checkbox:checked + .menu__content__header__like {
         @include heart-animation;
+      }
+
+      #Checkbox:not(:checked) + .menu__content__header__like {
+        @include heart-animation-reverse;
       }
     }
 
@@ -146,7 +148,7 @@
             &__desserts {
               &__item {
                 &__check {
-                  animation: 0.5s ease-in enlarge forwards;  // équivalent a ci-dessous
+                  animation: 0.5s ease-in enlarge forwards; // équivalent a ci-dessous
                 }
               }
             }

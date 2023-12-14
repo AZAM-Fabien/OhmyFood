@@ -19,14 +19,28 @@
     height: 100%;
   }
 }
+@keyframes drop-to-bottom {
+  from {
+    height: 100%;
+  }
+  to {
+    top: 100%;
+  }
+}
 @keyframes fill-heart {
   to {
-    visibility: visible;
+    opacity: 1;
   }
 }
 @keyframes hide-heart {
-  to {
-    display: none;
+  0% {
+    opacity: 1;
+  }
+  37.5% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
 @keyframes enlarge {
@@ -132,7 +146,7 @@ h1 {
   display: block;
   width: 40px;
   height: 3px;
-  background-color: #99E2D0;
+  background-color: #99e2d0;
   margin-bottom: 12px;
 }
 .menu__content h4 {
@@ -176,7 +190,7 @@ h1 {
   margin: 0px;
 }
 
-.explorer__button a,
+.explorer__button,
 .menu__content__button button {
   font-family: "Roboto", sans-serif;
   font-weight: 500;
@@ -211,7 +225,7 @@ h1 {
   font-weight: bold;
   letter-spacing: 2px;
   font-family: "Shrikhand", serif;
-  background: linear-gradient(180deg, #9356DC, #FF79DA);
+  background: linear-gradient(180deg, #9356dc, #ff79da);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -300,7 +314,7 @@ h1 {
 }
 
 .location {
-  background: linear-gradient(#353535 -50%, #EAEAEA 20%);
+  background: linear-gradient(#353535 -50%, #eaeaea 20%);
   height: 50px;
   display: flex;
   flex-direction: row;
@@ -313,19 +327,27 @@ h1 {
 }
 .location input {
   border: none;
-  background-color: #EAEAEA;
+  background-color: #eaeaea;
   color: black;
   width: 115px;
 }
 
 .explorer {
-  background-color: #F6F6F6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f6f6f6;
   padding: 35px 20px 35px 20px;
   text-align: center;
   text-wrap: pretty;
 }
 .explorer__button {
-  background: linear-gradient(0deg, #9356DC, #FF79DA);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(0deg, #9356dc, #ff79da);
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
   border-radius: 25px;
   width: 218px;
@@ -335,14 +357,6 @@ h1 {
 .explorer__button:hover {
   background: linear-gradient(180deg, #ff93e1, #ae80e5);
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
-}
-.explorer__button a {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
 }
 
 .function {
@@ -386,11 +400,11 @@ h1 {
   margin-left: 0;
 }
 .function__list__item--violet i {
-  color: #9356DC;
+  color: #9356dc;
 }
 .function__list__item__number {
   color: white;
-  background-color: #9356DC;
+  background-color: #9356dc;
   border-radius: 50%;
   width: 25px;
   height: 25px;
@@ -405,7 +419,7 @@ h1 {
 }
 
 .restaurants {
-  background-color: #F6F6F6;
+  background-color: #f6f6f6;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -499,89 +513,134 @@ h1 {
   left: 84%;
   bottom: 54px;
 }
-.restaurants__cards__card__icon i {
+.restaurants__cards__card__icon .emptyheart {
   font-size: 22px;
   position: absolute;
 }
-.restaurants__cards__card__icon .emptyheart {
-  visibility: visible;
+.restaurants__cards__card__icon .fullheart {
+  opacity: 0;
 }
-.restaurants__cards__card__icon__wrap .fullheart {
-  visibility: hidden;
+.restaurants__cards__card__icon .fullheart::before {
+  background: white;
 }
-.restaurants__cards__card__icon__wrap i {
+.restaurants__cards__card__icon .fullheart {
+  font-size: 22px;
   position: relative;
 }
-.restaurants__cards__card #Checkbox1:checked + .restaurants__cards__card__icon .emptyheart {
-  animation: 0.1s hide-heart ease-out forwards;
-}
 .restaurants__cards__card #Checkbox1:checked + .restaurants__cards__card__icon .fullheart {
-  animation: 0.1s fill-heart ease-out forwards;
+  animation: 0.5s fill-heart ease-out forwards;
 }
-.restaurants__cards__card #Checkbox1:checked + .restaurants__cards__card__icon #heart:after {
+.restaurants__cards__card #Checkbox1:checked + .restaurants__cards__card__icon .fullheart:after {
   content: "";
   position: absolute;
   left: 0;
   top: 0;
   height: 0;
   width: 100%;
-  background: linear-gradient(180deg, #9356DC, #FF79DA);
+  background: linear-gradient(180deg, #9356dc, #ff79da);
   animation: 0.6s rise-to-top ease-in-out forwards;
-  animation-delay: 0.2s;
+  animation-delay: 0.6s;
   mix-blend-mode: screen;
 }
-.restaurants__cards__card #Checkbox2:checked + .restaurants__cards__card__icon .emptyheart {
-  animation: 0.1s hide-heart ease-out forwards;
+.restaurants__cards__card #Checkbox1:not(:checked) + .restaurants__cards__card__icon .fullheart {
+  animation: hide-heart 1.6s ease-in-out forwards;
+}
+.restaurants__cards__card #Checkbox1:not(:checked) + .restaurants__cards__card__icon .fullheart:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 0;
+  width: 100%;
+  background: linear-gradient(180deg, #9356dc, #ff79da);
+  animation: 0.6s drop-to-bottom ease-in-out forwards;
+  mix-blend-mode: screen;
 }
 .restaurants__cards__card #Checkbox2:checked + .restaurants__cards__card__icon .fullheart {
-  animation: 0.1s fill-heart ease-out forwards;
+  animation: 0.5s fill-heart ease-out forwards;
 }
-.restaurants__cards__card #Checkbox2:checked + .restaurants__cards__card__icon #heart:after {
+.restaurants__cards__card #Checkbox2:checked + .restaurants__cards__card__icon .fullheart:after {
   content: "";
   position: absolute;
   left: 0;
   top: 0;
   height: 0;
   width: 100%;
-  background: linear-gradient(180deg, #9356DC, #FF79DA);
+  background: linear-gradient(180deg, #9356dc, #ff79da);
   animation: 0.6s rise-to-top ease-in-out forwards;
-  animation-delay: 0.2s;
+  animation-delay: 0.6s;
   mix-blend-mode: screen;
 }
-.restaurants__cards__card #Checkbox3:checked + .restaurants__cards__card__icon .emptyheart {
-  animation: 0.1s hide-heart ease-out forwards;
+.restaurants__cards__card #Checkbox2:not(:checked) + .restaurants__cards__card__icon .fullheart {
+  animation: hide-heart 1.6s ease-in-out forwards;
+}
+.restaurants__cards__card #Checkbox2:not(:checked) + .restaurants__cards__card__icon .fullheart:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 0;
+  width: 100%;
+  background: linear-gradient(180deg, #9356dc, #ff79da);
+  animation: 0.6s drop-to-bottom ease-in-out forwards;
+  mix-blend-mode: screen;
 }
 .restaurants__cards__card #Checkbox3:checked + .restaurants__cards__card__icon .fullheart {
-  animation: 0.1s fill-heart ease-out forwards;
+  animation: 0.5s fill-heart ease-out forwards;
 }
-.restaurants__cards__card #Checkbox3:checked + .restaurants__cards__card__icon #heart:after {
+.restaurants__cards__card #Checkbox3:checked + .restaurants__cards__card__icon .fullheart:after {
   content: "";
   position: absolute;
   left: 0;
   top: 0;
   height: 0;
   width: 100%;
-  background: linear-gradient(180deg, #9356DC, #FF79DA);
+  background: linear-gradient(180deg, #9356dc, #ff79da);
   animation: 0.6s rise-to-top ease-in-out forwards;
-  animation-delay: 0.2s;
+  animation-delay: 0.6s;
   mix-blend-mode: screen;
 }
-.restaurants__cards__card #Checkbox4:checked + .restaurants__cards__card__icon .emptyheart {
-  animation: 0.1s hide-heart ease-out forwards;
+.restaurants__cards__card #Checkbox3:not(:checked) + .restaurants__cards__card__icon .fullheart {
+  animation: hide-heart 1.6s ease-in-out forwards;
 }
-.restaurants__cards__card #Checkbox4:checked + .restaurants__cards__card__icon .fullheart {
-  animation: 0.1s fill-heart ease-out forwards;
-}
-.restaurants__cards__card #Checkbox4:checked + .restaurants__cards__card__icon #heart:after {
+.restaurants__cards__card #Checkbox3:not(:checked) + .restaurants__cards__card__icon .fullheart:after {
   content: "";
   position: absolute;
   left: 0;
   top: 0;
   height: 0;
   width: 100%;
-  background: linear-gradient(180deg, #9356DC, #FF79DA);
+  background: linear-gradient(180deg, #9356dc, #ff79da);
+  animation: 0.6s drop-to-bottom ease-in-out forwards;
+  mix-blend-mode: screen;
+}
+.restaurants__cards__card #Checkbox4:checked + .restaurants__cards__card__icon .fullheart {
+  animation: 0.5s fill-heart ease-out forwards;
+}
+.restaurants__cards__card #Checkbox4:checked + .restaurants__cards__card__icon .fullheart:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 0;
+  width: 100%;
+  background: linear-gradient(180deg, #9356dc, #ff79da);
   animation: 0.6s rise-to-top ease-in-out forwards;
-  animation-delay: 0.2s;
+  animation-delay: 0.6s;
+  mix-blend-mode: screen;
+}
+.restaurants__cards__card #Checkbox4:not(:checked) + .restaurants__cards__card__icon .fullheart {
+  animation: hide-heart 1.6s ease-in-out forwards;
+}
+.restaurants__cards__card #Checkbox4:not(:checked) + .restaurants__cards__card__icon .fullheart:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 0;
+  width: 100%;
+  background: linear-gradient(180deg, #9356dc, #ff79da);
+  animation: 0.6s drop-to-bottom ease-in-out forwards;
   mix-blend-mode: screen;
 }
 
@@ -616,7 +675,7 @@ h1 {
   position: relative;
   z-index: 1;
   top: -50px;
-  background-color: #F6F6F6;
+  background-color: #f6f6f6;
   padding: 50px 0px;
   gap: 40px;
   width: 100%;
@@ -673,35 +732,47 @@ h1 {
 .menu__content__header #Checkbox {
   display: none;
 }
-.menu__content__header__like i {
+.menu__content__header__like .emptyheart {
   font-size: 22px;
   position: absolute;
 }
-.menu__content__header__like .emptyheart {
-  visibility: visible;
+.menu__content__header__like .fullheart {
+  opacity: 0;
 }
-.menu__content__header__like__wrap .fullheart {
-  visibility: hidden;
+.menu__content__header__like .fullheart::before {
+  background: white;
 }
-.menu__content__header__like__wrap i {
+.menu__content__header__like .fullheart {
+  font-size: 22px;
   position: relative;
 }
-.menu__content__header #Checkbox:checked + .menu__content__header__like .emptyheart {
-  animation: 0.1s hide-heart ease-out forwards;
-}
 .menu__content__header #Checkbox:checked + .menu__content__header__like .fullheart {
-  animation: 0.1s fill-heart ease-out forwards;
+  animation: 0.5s fill-heart ease-out forwards;
 }
-.menu__content__header #Checkbox:checked + .menu__content__header__like #heart:after {
+.menu__content__header #Checkbox:checked + .menu__content__header__like .fullheart:after {
   content: "";
   position: absolute;
   left: 0;
   top: 0;
   height: 0;
   width: 100%;
-  background: linear-gradient(180deg, #9356DC, #FF79DA);
+  background: linear-gradient(180deg, #9356dc, #ff79da);
   animation: 0.6s rise-to-top ease-in-out forwards;
-  animation-delay: 0.2s;
+  animation-delay: 0.6s;
+  mix-blend-mode: screen;
+}
+.menu__content__header #Checkbox:not(:checked) + .menu__content__header__like .fullheart {
+  animation: hide-heart 1.6s ease-in-out forwards;
+}
+.menu__content__header #Checkbox:not(:checked) + .menu__content__header__like .fullheart:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 0;
+  width: 100%;
+  background: linear-gradient(180deg, #9356dc, #ff79da);
+  animation: 0.6s drop-to-bottom ease-in-out forwards;
   mix-blend-mode: screen;
 }
 .menu__content__entrees, .menu__content__plats, .menu__content__desserts {
@@ -752,7 +823,7 @@ h1 {
   justify-content: center;
   width: 0;
   height: 100%;
-  background-color: #99E2D0;
+  background-color: #99e2d0;
   color: white;
   z-index: 999;
   border-radius: 0 20px 20px 0;
@@ -763,7 +834,7 @@ h1 {
   animation: 0.5s ease-in enlarge forwards;
 }
 .menu__content__button button {
-  background: linear-gradient(0deg, #9356DC, #FF79DA);
+  background: linear-gradient(0deg, #9356dc, #ff79da);
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
   border-radius: 25px;
   width: 218px;

@@ -1,39 +1,38 @@
 .footer {
-    background-color: $color-darkgrey;
+  background-color: $color-darkgrey;
+  color: $color-text-white;
+  padding: 30px 25px;
+  @include desktop {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-end;
+    gap: 100px;
+  }
+
+  &__list {
+    @include display-flex-column-start;
+    list-style: none;
     color: $color-text-white;
-    padding: 30px 25px;
+    padding: 0;
+    margin-bottom: 0;
+    gap: 7px;
     @include desktop {
+      flex-direction: row;
+      gap: 25px;
+    }
+
+    & i {
+      margin-right: 11px;
+
+      &::before {
         display: flex;
-        flex-direction: row-reverse;
-        align-items: flex-end;
-        gap: 100px;
+        width: 11px;
+      }
     }
 
-    &__list {
-        @include display-flex-column-start;
-        list-style: none;
-        color: $color-text-white;
-        padding: 0;
-        margin-bottom: 0;
-        gap: 7px;
-        @include desktop {
-            flex-direction: row;
-            gap: 25px;
-
-        }
-
-        & i {
-            margin-right: 11px;
-
-            &::before {
-                display: flex;
-                width: 11px;
-            }
-        }
-
-        & a {
-            text-decoration: none;
-            color: $color-text-white;
-        }
+    & a {
+      text-decoration: none;
+      color: $color-text-white;
     }
+  }
 }

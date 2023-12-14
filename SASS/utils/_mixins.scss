@@ -62,15 +62,11 @@
 }
 
 @mixin heart-animation {
-  & .emptyheart {
-    animation: 0.1s hide-heart ease-out forwards;
-  }
-
   & .fullheart {
-    animation: 0.1s fill-heart ease-out forwards;
+    animation: 0.5s fill-heart ease-out forwards;
   }
 
-  & #heart:after {
+  & .fullheart:after {
     content: "";
     position: absolute;
     left: 0;
@@ -79,7 +75,25 @@
     width: 100%;
     background: linear-gradient(180deg, $color-primary, $color-secondary);
     animation: 0.6s rise-to-top ease-in-out forwards;
-    animation-delay: 0.2s;
+    animation-delay: 0.6s;
+    mix-blend-mode: screen;
+  }
+}
+
+@mixin heart-animation-reverse {
+  & .fullheart {
+    animation: hide-heart 1.6s ease-in-out forwards;
+  }
+
+  & .fullheart:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 0;
+    width: 100%;
+    background: linear-gradient(180deg, $color-primary, $color-secondary);
+    animation: 0.6s drop-to-bottom ease-in-out forwards;
     mix-blend-mode: screen;
   }
 }
