@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&family=Shrikhand&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&family=Shrikhand&display=swap");
 
 body {
   font-family: "Roboto", sans-serif;
@@ -10,8 +10,8 @@ body {
   font-size: $font-size-small;
 }
 
-.loaded{
-  & .location{
+.loaded {
+  & .location {
     & input {
       font-family: "Roboto", sans-serif;
       font-weight: 500;
@@ -45,27 +45,27 @@ h1 {
   }
 }
 .restaurants {
-  & h3{
-  margin: 0px;
-  font-size: $font-size-medium;
-  font-weight: 700;
+  & h3 {
+    margin: 0px;
+    font-size: $font-size-medium;
+    font-weight: 700;
   }
 
-  & p{
+  & p {
     margin: 0px;
     font-size: $font-size-small;
     font-weight: 300;
-}
+  }
 }
 
-.menu__content__header{
-   & h2{
+.menu__content__header {
+  & h2 {
     font-family: "Shrikhand", sans-serif;
     font-weight: 400;
     font-size: 28px;
   }
 }
-.menu__content{
+.menu__content {
   & h3 {
     font-family: "Roboto", sans-serif;
     font-weight: 300;
@@ -74,7 +74,7 @@ h1 {
 
     &::after {
       content: "";
-      position: relative; 
+      position: relative;
       top: 8px;
       display: block;
       width: 40px;
@@ -98,7 +98,7 @@ h1 {
   &__entrees,
   &__plats,
   &__desserts {
-    &__item{
+    &__item {
       &__box__description p {
         font-family: "Roboto", sans-serif;
         font-weight: 300;
@@ -120,9 +120,6 @@ h1 {
   }
 }
 
-
-
-
 .footer > h2 {
   font-family: "Shrikhand", sans-serif;
   font-weight: 400;
@@ -137,9 +134,11 @@ h1 {
   margin: 0px;
 }
 
-button{
+.explorer__button a,
+.menu__content__button button {
   font-family: "Roboto", sans-serif;
   font-weight: 500;
   font-size: $font-size-small;
+  color: $color-button-text;
+  text-decoration: none;
 }
-

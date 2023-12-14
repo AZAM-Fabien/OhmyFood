@@ -176,10 +176,13 @@ h1 {
   margin: 0px;
 }
 
-button {
+.explorer__button a,
+.menu__content__button button {
   font-family: "Roboto", sans-serif;
   font-weight: 500;
   font-size: 16px;
+  color: white;
+  text-decoration: none;
 }
 
 .loader {
@@ -328,11 +331,18 @@ button {
   width: 218px;
   height: 50px;
   border: none;
-  color: white;
 }
 .explorer__button:hover {
   background: linear-gradient(180deg, #ff93e1, #ae80e5);
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+}
+.explorer__button a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
 }
 
 .function {
@@ -759,7 +769,6 @@ button {
   width: 218px;
   height: 50px;
   border: none;
-  color: white;
 }
 .menu__content__button button:hover {
   background: linear-gradient(180deg, #ff93e1, #ae80e5);
