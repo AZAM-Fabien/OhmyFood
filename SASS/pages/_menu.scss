@@ -34,7 +34,6 @@
     width: 100%;
     border-radius: 50px 50px 0px 0px;
     @include desktop {
-      min-width: 1080px;
       width: 80vw;
     }
 
@@ -56,7 +55,7 @@
       width: 100%;
       @include desktop {
         justify-content: center;
-        gap: 60px;
+        gap: 30px;
       }
 
       #Checkbox {
@@ -72,7 +71,7 @@
         & .fullheart {
           opacity: 0;
           &::before {
-            background: white;
+            background: $color-lightergrey;
           }
         }
 
@@ -137,7 +136,6 @@
           z-index: 999;
           border-radius: 0 20px 20px 0;
           overflow: hidden;
-          // soit le not soit ne fonctionne pas car effet chargement au debut de la page
           animation: 0.5s ease-in shrink forwards;
         }
 
@@ -148,7 +146,7 @@
             &__desserts {
               &__item {
                 &__check {
-                  animation: 0.5s ease-in enlarge forwards; // équivalent a ci-dessous
+                  animation: 0.5s ease-in enlarge forwards; // équivalent au code ci-dessous
                 }
               }
             }

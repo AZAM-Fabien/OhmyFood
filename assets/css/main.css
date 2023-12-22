@@ -91,8 +91,9 @@ body {
   font-size: 16px;
 }
 
-.function__list p {
+.function__list__item__text {
   text-wrap: balance;
+  padding-right: 10px;
 }
 
 h1,
@@ -101,7 +102,6 @@ section h2 {
   font-weight: 700;
   font-size: 24px;
   margin: 0px;
-  width: 320px;
 }
 
 h1 {
@@ -385,6 +385,7 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   list-style-type: none;
   color: black;
   padding: 0;
@@ -714,7 +715,6 @@ h1 {
 }
 @media screen and (min-width: 860px) {
   .menu__content {
-    min-width: 1080px;
     width: 80vw;
   }
 }
@@ -757,7 +757,7 @@ h1 {
 @media screen and (min-width: 860px) {
   .menu__content__header {
     justify-content: center;
-    gap: 60px;
+    gap: 30px;
   }
 }
 .menu__content__header #Checkbox {
@@ -771,7 +771,7 @@ h1 {
   opacity: 0;
 }
 .menu__content__header__like .fullheart::before {
-  background: white;
+  background: #f6f6f6;
 }
 .menu__content__header__like .fullheart {
   font-size: 22px;

@@ -43,7 +43,7 @@
     }
   }
   &__list {
-    @include display-flex-column-center;
+    @include display-flex-column-center-center;
     list-style-type: none;
     color: $color-text;
     padding: 0;
