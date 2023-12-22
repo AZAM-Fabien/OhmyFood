@@ -205,7 +205,7 @@ h1 {
 }
 
 .loader {
-  display: none;
+  display: flex;
 }
 
 .loader {
