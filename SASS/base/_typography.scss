@@ -20,6 +20,12 @@ body {
   }
 }
 
+.function__list {
+  & p {
+    text-wrap: balance;
+  }
+}
+
 h1,
 section h2 {
   font-family: "Roboto", sans-serif;

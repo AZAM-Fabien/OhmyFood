@@ -33,8 +33,15 @@
   background-color: $color-background-primary;
   padding: 35px 20px 35px 20px;
   @include display-flex-column-center;
-  text-wrap: pretty; // non implémenté sous firefox
+  @include desktop {
+    padding: 35px 10%;
+  }
 
+  & #div--desktop {
+    @include desktop {
+      width: 100%;
+    }
+  }
   &__list {
     @include display-flex-column-center;
     list-style-type: none;
@@ -44,6 +51,8 @@
     gap: 25px;
     @include desktop {
       @include display-flex-row-center;
+      width: 100%;
+      gap: $function__list--gap;
     }
 
     &__item {
@@ -57,6 +66,10 @@
       flex-shrink: 0;
       padding-left: 0;
       margin-left: 0;
+
+      @include desktop {
+        width: calc(33% - $function__list--gap);
+      }
 
       &--violet {
         & i {
@@ -128,10 +141,21 @@
       }
 
       & a {
+        position: relative;
         text-decoration: none;
         color: $color-text;
         height: 100%;
         width: 100%;
+      }
+
+      &__new {
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        color: $color_darkgreen;
+        background-color: $color-tertiary;
+        border-radius: 4px;
+        padding: 5px 10px;
       }
 
       & img {
