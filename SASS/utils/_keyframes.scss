@@ -21,7 +21,7 @@
   0% {
     opacity: 1;
   }
-  
+
   100% {
     opacity: 0;
   }
@@ -51,5 +51,41 @@
   }
   100% {
     opacity: 1;
+  }
+}
+
+@keyframes btn-hover {
+  @for $i from 0 to 100 {
+    #{$i}% {
+      background: linear-gradient(
+        180deg,
+        lighten($color-secondary, $i * 0.05),
+        lighten($color-primary, $i * 0.1)
+      );
+    }
+  }
+  100% {
+    background: linear-gradient(
+      180deg,
+      lighten($color-secondary, 5),
+      lighten($color-primary, 10)
+    );
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.35);
+  }
+}
+
+@keyframes btn-hover-reverse {
+  @for $i from 0 to 100 {
+    #{$i}% {
+      background: linear-gradient(
+        180deg,
+        lighten($color-secondary, 5-$i * 0.05),
+        lighten($color-primary, 10-$i * 0.1)
+      );
+    }
+  }
+  100% {
+    background: linear-gradient(0deg, $color-primary, $color-secondary);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
   }
 }
