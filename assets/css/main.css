@@ -11,22 +11,6 @@
     opacity: 0;
   }
 }
-@keyframes rise-to-top {
-  from {
-    top: 100%;
-  }
-  to {
-    height: 100%;
-  }
-}
-@keyframes drop-to-bottom {
-  from {
-    height: 100%;
-  }
-  to {
-    top: 100%;
-  }
-}
 @keyframes fill-heart {
   to {
     opacity: 1;
@@ -359,7 +343,7 @@ h1 {
 }
 .explorer__button:hover {
   background: linear-gradient(180deg, #ff93e1, #ae80e5);
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.35);
 }
 
 .function {
@@ -558,120 +542,28 @@ h1 {
   position: relative;
 }
 .restaurants__cards__card #Checkbox1:checked + .restaurants__cards__card__icon .fullheart {
-  animation: 0.5s fill-heart ease-out forwards;
-}
-.restaurants__cards__card #Checkbox1:checked + .restaurants__cards__card__icon .fullheart:after {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 0;
-  width: 100%;
-  background: linear-gradient(180deg, #9356dc, #ff79da);
-  animation: 0.6s rise-to-top ease-in-out forwards;
-  animation-delay: 0.6s;
-  mix-blend-mode: screen;
+  animation: 1s fill-heart ease-in-out forwards;
 }
 .restaurants__cards__card #Checkbox1:not(:checked) + .restaurants__cards__card__icon .fullheart {
-  animation: hide-heart 1.6s ease-in-out forwards;
-}
-.restaurants__cards__card #Checkbox1:not(:checked) + .restaurants__cards__card__icon .fullheart:after {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 0;
-  width: 100%;
-  background: linear-gradient(180deg, #9356dc, #ff79da);
-  animation: 0.6s drop-to-bottom ease-in-out forwards;
-  mix-blend-mode: screen;
+  animation: hide-heart 1s ease-in-out forwards;
 }
 .restaurants__cards__card #Checkbox2:checked + .restaurants__cards__card__icon .fullheart {
-  animation: 0.5s fill-heart ease-out forwards;
-}
-.restaurants__cards__card #Checkbox2:checked + .restaurants__cards__card__icon .fullheart:after {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 0;
-  width: 100%;
-  background: linear-gradient(180deg, #9356dc, #ff79da);
-  animation: 0.6s rise-to-top ease-in-out forwards;
-  animation-delay: 0.6s;
-  mix-blend-mode: screen;
+  animation: 1s fill-heart ease-in-out forwards;
 }
 .restaurants__cards__card #Checkbox2:not(:checked) + .restaurants__cards__card__icon .fullheart {
-  animation: hide-heart 1.6s ease-in-out forwards;
-}
-.restaurants__cards__card #Checkbox2:not(:checked) + .restaurants__cards__card__icon .fullheart:after {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 0;
-  width: 100%;
-  background: linear-gradient(180deg, #9356dc, #ff79da);
-  animation: 0.6s drop-to-bottom ease-in-out forwards;
-  mix-blend-mode: screen;
+  animation: hide-heart 1s ease-in-out forwards;
 }
 .restaurants__cards__card #Checkbox3:checked + .restaurants__cards__card__icon .fullheart {
-  animation: 0.5s fill-heart ease-out forwards;
-}
-.restaurants__cards__card #Checkbox3:checked + .restaurants__cards__card__icon .fullheart:after {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 0;
-  width: 100%;
-  background: linear-gradient(180deg, #9356dc, #ff79da);
-  animation: 0.6s rise-to-top ease-in-out forwards;
-  animation-delay: 0.6s;
-  mix-blend-mode: screen;
+  animation: 1s fill-heart ease-in-out forwards;
 }
 .restaurants__cards__card #Checkbox3:not(:checked) + .restaurants__cards__card__icon .fullheart {
-  animation: hide-heart 1.6s ease-in-out forwards;
-}
-.restaurants__cards__card #Checkbox3:not(:checked) + .restaurants__cards__card__icon .fullheart:after {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 0;
-  width: 100%;
-  background: linear-gradient(180deg, #9356dc, #ff79da);
-  animation: 0.6s drop-to-bottom ease-in-out forwards;
-  mix-blend-mode: screen;
+  animation: hide-heart 1s ease-in-out forwards;
 }
 .restaurants__cards__card #Checkbox4:checked + .restaurants__cards__card__icon .fullheart {
-  animation: 0.5s fill-heart ease-out forwards;
-}
-.restaurants__cards__card #Checkbox4:checked + .restaurants__cards__card__icon .fullheart:after {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 0;
-  width: 100%;
-  background: linear-gradient(180deg, #9356dc, #ff79da);
-  animation: 0.6s rise-to-top ease-in-out forwards;
-  animation-delay: 0.6s;
-  mix-blend-mode: screen;
+  animation: 1s fill-heart ease-in-out forwards;
 }
 .restaurants__cards__card #Checkbox4:not(:checked) + .restaurants__cards__card__icon .fullheart {
-  animation: hide-heart 1.6s ease-in-out forwards;
-}
-.restaurants__cards__card #Checkbox4:not(:checked) + .restaurants__cards__card__icon .fullheart:after {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 0;
-  width: 100%;
-  background: linear-gradient(180deg, #9356dc, #ff79da);
-  animation: 0.6s drop-to-bottom ease-in-out forwards;
-  mix-blend-mode: screen;
+  animation: hide-heart 1s ease-in-out forwards;
 }
 
 .menu {
@@ -766,43 +658,24 @@ h1 {
   position: absolute;
 }
 .menu__content__header__like .fullheart {
+  font-size: 22px;
+  position: relative;
+  bottom: 1px;
   opacity: 0;
 }
 .menu__content__header__like .fullheart::before {
-  background: #f6f6f6;
-}
-.menu__content__header__like .fullheart {
-  font-size: 22px;
-  position: relative;
+  background: linear-gradient(180deg, #9356dc, #ff79da);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
 }
 .menu__content__header #Checkbox:checked + .menu__content__header__like .fullheart {
-  animation: 0.5s fill-heart ease-out forwards;
-}
-.menu__content__header #Checkbox:checked + .menu__content__header__like .fullheart:after {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 0;
-  width: 100%;
-  background: linear-gradient(180deg, #9356dc, #ff79da);
-  animation: 0.6s rise-to-top ease-in-out forwards;
-  animation-delay: 0.6s;
-  mix-blend-mode: screen;
+  animation: 1s fill-heart ease-in-out forwards;
 }
 .menu__content__header #Checkbox:not(:checked) + .menu__content__header__like .fullheart {
-  animation: hide-heart 1.6s ease-in-out forwards;
-}
-.menu__content__header #Checkbox:not(:checked) + .menu__content__header__like .fullheart:after {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 0;
-  width: 100%;
-  background: linear-gradient(180deg, #9356dc, #ff79da);
-  animation: 0.6s drop-to-bottom ease-in-out forwards;
-  mix-blend-mode: screen;
+  animation: hide-heart 1s ease-in-out forwards;
 }
 .menu__content__entrees, .menu__content__plats, .menu__content__desserts {
   display: flex;
@@ -872,5 +745,5 @@ h1 {
 }
 .menu__content__button button:hover {
   background: linear-gradient(180deg, #ff93e1, #ae80e5);
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.35);
 }/*# sourceMappingURL=main.css.map */

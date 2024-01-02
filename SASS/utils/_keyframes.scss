@@ -11,24 +11,6 @@
   }
 }
 
-@keyframes rise-to-top {
-  from {
-    top: 100%;
-  }
-  to {
-    height: 100%;
-  }
-}
-
-@keyframes drop-to-bottom {
-  from {
-    height: 100%;
-  }
-  to {
-    top: 100%;
-  }
-}
-
 @keyframes fill-heart {
   to {
     opacity: 1;

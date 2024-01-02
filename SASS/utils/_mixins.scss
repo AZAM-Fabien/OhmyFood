@@ -57,44 +57,19 @@
       lighten($color-secondary, 5),
       lighten($color-primary, 10)
     );
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.35);
   }
 }
 
 @mixin heart-animation {
   & .fullheart {
-    animation: 0.5s fill-heart ease-out forwards;
-  }
-
-  & .fullheart:after {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 0;
-    width: 100%;
-    background: linear-gradient(180deg, $color-primary, $color-secondary);
-    animation: 0.6s rise-to-top ease-in-out forwards;
-    animation-delay: 0.6s;
-    mix-blend-mode: screen;
+    animation: 1s fill-heart ease-in-out forwards;
   }
 }
 
 @mixin heart-animation-reverse {
   & .fullheart {
-    animation: hide-heart 1.6s ease-in-out forwards;
-  }
-
-  & .fullheart:after {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 0;
-    width: 100%;
-    background: linear-gradient(180deg, $color-primary, $color-secondary);
-    animation: 0.6s drop-to-bottom ease-in-out forwards;
-    mix-blend-mode: screen;
+    animation: hide-heart 1s ease-in-out forwards;
   }
 }
 
