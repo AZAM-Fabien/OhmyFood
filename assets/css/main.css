@@ -24,6 +24,28 @@
     opacity: 0;
   }
 }
+@keyframes hide-empty-heart {
+  0% {
+    opacity: 1;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes appear-empty-heart {
+  0% {
+    opacity: 1;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 @keyframes enlarge {
   from {
     width: 0;
@@ -1145,7 +1167,6 @@ h1 {
 .restaurants__cards__card__icon .fullheart {
   font-size: 22px;
   position: relative;
-  bottom: 0.5px;
   opacity: 0;
 }
 .restaurants__cards__card__icon .fullheart::before {
@@ -1159,26 +1180,50 @@ h1 {
 .restaurants__cards__card #Checkbox1:checked + .restaurants__cards__card__icon .fullheart {
   animation: 1s fill-heart ease-in-out forwards;
 }
+.restaurants__cards__card #Checkbox1:checked + .restaurants__cards__card__icon .emptyheart {
+  animation: hide-empty-heart 1s ease-in-out forwards;
+}
 .restaurants__cards__card #Checkbox1:not(:checked) + .restaurants__cards__card__icon .fullheart {
   animation: hide-heart 1s ease-in-out forwards;
+}
+.restaurants__cards__card #Checkbox1:not(:checked) + .restaurants__cards__card__icon .emptyheart {
+  animation: appear-empty-heart 1s ease-in-out forwards reverse;
 }
 .restaurants__cards__card #Checkbox2:checked + .restaurants__cards__card__icon .fullheart {
   animation: 1s fill-heart ease-in-out forwards;
 }
+.restaurants__cards__card #Checkbox2:checked + .restaurants__cards__card__icon .emptyheart {
+  animation: hide-empty-heart 1s ease-in-out forwards;
+}
 .restaurants__cards__card #Checkbox2:not(:checked) + .restaurants__cards__card__icon .fullheart {
   animation: hide-heart 1s ease-in-out forwards;
+}
+.restaurants__cards__card #Checkbox2:not(:checked) + .restaurants__cards__card__icon .emptyheart {
+  animation: appear-empty-heart 1s ease-in-out forwards reverse;
 }
 .restaurants__cards__card #Checkbox3:checked + .restaurants__cards__card__icon .fullheart {
   animation: 1s fill-heart ease-in-out forwards;
 }
+.restaurants__cards__card #Checkbox3:checked + .restaurants__cards__card__icon .emptyheart {
+  animation: hide-empty-heart 1s ease-in-out forwards;
+}
 .restaurants__cards__card #Checkbox3:not(:checked) + .restaurants__cards__card__icon .fullheart {
   animation: hide-heart 1s ease-in-out forwards;
+}
+.restaurants__cards__card #Checkbox3:not(:checked) + .restaurants__cards__card__icon .emptyheart {
+  animation: appear-empty-heart 1s ease-in-out forwards reverse;
 }
 .restaurants__cards__card #Checkbox4:checked + .restaurants__cards__card__icon .fullheart {
   animation: 1s fill-heart ease-in-out forwards;
 }
+.restaurants__cards__card #Checkbox4:checked + .restaurants__cards__card__icon .emptyheart {
+  animation: hide-empty-heart 1s ease-in-out forwards;
+}
 .restaurants__cards__card #Checkbox4:not(:checked) + .restaurants__cards__card__icon .fullheart {
   animation: hide-heart 1s ease-in-out forwards;
+}
+.restaurants__cards__card #Checkbox4:not(:checked) + .restaurants__cards__card__icon .emptyheart {
+  animation: appear-empty-heart 1s ease-in-out forwards reverse;
 }
 
 .menu {
@@ -1310,7 +1355,6 @@ h1 {
 .menu__content__header__like .fullheart {
   font-size: 22px;
   position: relative;
-  bottom: 1px;
   opacity: 0;
 }
 .menu__content__header__like .fullheart::before {
@@ -1324,8 +1368,14 @@ h1 {
 .menu__content__header #Checkbox:checked + .menu__content__header__like .fullheart {
   animation: 1s fill-heart ease-in-out forwards;
 }
+.menu__content__header #Checkbox:checked + .menu__content__header__like .emptyheart {
+  animation: hide-empty-heart 1s ease-in-out forwards;
+}
 .menu__content__header #Checkbox:not(:checked) + .menu__content__header__like .fullheart {
   animation: hide-heart 1s ease-in-out forwards;
+}
+.menu__content__header #Checkbox:not(:checked) + .menu__content__header__like .emptyheart {
+  animation: appear-empty-heart 1s ease-in-out forwards reverse;
 }
 .menu__content__entrees, .menu__content__plats, .menu__content__desserts {
   display: flex;

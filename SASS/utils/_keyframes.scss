@@ -21,11 +21,38 @@
   0% {
     opacity: 1;
   }
-
   100% {
     opacity: 0;
   }
 }
+
+@keyframes hide-empty-heart {
+  0% {
+    opacity: 1;
+  }
+
+  20% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes appear-empty-heart {
+  0% {
+    opacity: 1;
+  }
+
+  20% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+
 
 @keyframes enlarge {
   from {

@@ -64,11 +64,19 @@
   & .fullheart {
     animation: 1s fill-heart ease-in-out forwards;
   }
+
+  & .emptyheart {
+    animation: hide-empty-heart 1s ease-in-out forwards;
+  }
 }
 
 @mixin heart-animation-reverse {
   & .fullheart {
     animation: hide-heart 1s ease-in-out forwards;
+  }
+
+  & .emptyheart {
+    animation: appear-empty-heart 1s ease-in-out forwards reverse;
   }
 }
 
