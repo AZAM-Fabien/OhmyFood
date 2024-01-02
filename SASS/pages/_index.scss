@@ -21,7 +21,7 @@
   background-color: $color-lightergrey;
   padding: 35px 20px 35px 20px;
   text-align: center;
-  text-wrap: pretty; // non implémenté sous firefox
+
 
   &__button {
     @include display-flex-row-center-center;

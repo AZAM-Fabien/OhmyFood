@@ -92,7 +92,6 @@ body {
 }
 
 .function__list__item__text {
-  text-wrap: balance;
   padding-right: 10px;
 }
 
@@ -345,7 +344,6 @@ h1 {
   background-color: #f6f6f6;
   padding: 35px 20px 35px 20px;
   text-align: center;
-  text-wrap: pretty;
 }
 .explorer__button {
   display: flex;
