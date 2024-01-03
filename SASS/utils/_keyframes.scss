@@ -52,8 +52,6 @@
   }
 }
 
-
-
 @keyframes enlarge {
   from {
     width: 0;
@@ -69,6 +67,12 @@
   }
   to {
     width: 0;
+  }
+}
+
+@keyframes shrink-box {
+  to {
+    width: calc(100% - 59px);
   }
 }
 
