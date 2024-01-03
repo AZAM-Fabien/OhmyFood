@@ -118,6 +118,7 @@
         box-sizing: border-box;
 
         &__box {
+          animation: enlarge-box 0.5s ease-in forwards;
           @include display-flex-row-center;
           justify-content: space-between;
           gap: 15px;
