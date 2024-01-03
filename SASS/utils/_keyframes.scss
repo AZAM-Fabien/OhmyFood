@@ -77,6 +77,9 @@
 }
 
 @keyframes enlarge-box {
+  from {
+    width: calc(100% - 59px);
+  }
   to {
     width: 100%;
   }
